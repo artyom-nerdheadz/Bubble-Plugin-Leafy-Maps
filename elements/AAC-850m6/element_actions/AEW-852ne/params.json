@@ -181,6 +181,14 @@
             "name": "spiderify",
             "rank": 20,
             "value": "boolean"
+        },
+        "AOB": {
+            "caption": "text_text",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "text_text",
+            "rank": 21,
+            "value": "text"
         }
     }
 }

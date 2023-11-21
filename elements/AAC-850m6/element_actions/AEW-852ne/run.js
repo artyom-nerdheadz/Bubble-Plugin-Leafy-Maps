@@ -91,6 +91,7 @@ function(instance, properties, context) {
 
     let latitudes = getList(properties[`list_of_latitudes`], 0, properties[`list_of_latitudes`].length());
     let longitudes = getList(properties[`list_of_longitudes`], 0, properties[`list_of_longitudes`].length());
+    let markertext = getList(properties[`text_text`], 0, properties[`text_text`].length());
 
     if (typeof properties[`list_of_popup_texts`] !== "undefined" && properties[`list_of_popup_texts`] !== null) {
 
@@ -125,15 +126,28 @@ function(instance, properties, context) {
 
         if (properties.popup_on_click && properties.use_custom_icon) {
 
-            let myIcon = L.icon({
+            /*let myIcon = L.icon({
                 iconUrl: `https:${properties.custom_icon_url}`,
-                iconSize: [64, 64], // size of the icon
-                shadowSize: [50, 64], // size of the shadow
-                iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
-                shadowAnchor: [4, 62],  // the same for the shadow
-                popupAnchor: [0, -64]   // point from which the popup should open relative to the iconAnchor
+                iconSize: [16, 16], // size of the icon
+                //shadowSize: [0, 0], // size of the shadow
+                iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+                //shadowAnchor: [0, 0],  // the same for the shadow
+                //popupAnchor: [0, -20],   // point from which the popup should open relative to the iconAnchor
 
-            });
+            });*/
+            let myIcon = L.divIcon({
+    className: 'custom-icon',
+    html: `
+        <div>
+            <img src="https:${properties.custom_icon_url}" width="16" height="16" />
+            <div style="font-size: 10px; font-family: 'Work Sans', sans-serif; font-weight: 700; color: blue; background-color: white; border-radius: 4px; width: max-content; padding: 4px; margin-left: -40%">${markertext[index]}</div>
+        </div>
+    `,
+    iconSize: [16, 16],
+    iconAnchor: [8, 8]
+});
+
+
 
             if (properties.clusterize_markers) {
 
@@ -151,10 +165,10 @@ function(instance, properties, context) {
             let myIcon = L.icon({
                 iconUrl: `https:${whichMarker(properties.marker_style)}`,
                 shadowUrl: "https://dd7tel2830j4w.cloudfront.net/f1564167608320x554071841235934900/marker-shadow.png",
-                iconSize: [25, 40], // size of the icon
-                shadowSize: [41, 41], // size of the shadow
-                iconAnchor: [12, 39], // point of the icon which will correspond to marker's location
-                shadowAnchor: [13, 40],  // the same for the shadow
+                iconSize: [16, 16], // size of the icon
+                shadowSize: [0, 0], // size of the shadow
+                iconAnchor: [16, 16], // point of the icon which will correspond to marker's location
+                shadowAnchor: [0, 0],  // the same for the shadow
                 popupAnchor: [0, -30] // point from which the popup should open relative to the iconAnchor
             });
 
@@ -172,11 +186,11 @@ function(instance, properties, context) {
 
             let myIcon = L.icon({
                 iconUrl: `https:${properties.custom_icon_url}`,
-                iconSize: [64, 64], // size of the icon
-                shadowSize: [50, 64], // size of the shadow
-                iconAnchor: [32, 64], // point of the icon which will correspond to marker's location
-                shadowAnchor: [4, 62],  // the same for the shadow
-                popupAnchor: [0, -64]   // point from which the popup should open relative to the iconAnchor
+                iconSize: [16, 16], // size of the icon
+                shadowSize: [0, 0], // size of the shadow
+                iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+                shadowAnchor: [0, 0],  // the same for the shadow
+                popupAnchor: [0, -20]   // point from which the popup should open relative to the iconAnchor
 
             });
 
@@ -195,10 +209,10 @@ function(instance, properties, context) {
             let myIcon = L.icon({
                 iconUrl: `https:${whichMarker(properties.marker_style)}`,
                 shadowUrl: "https://dd7tel2830j4w.cloudfront.net/f1564167608320x554071841235934900/marker-shadow.png",
-                iconSize: [25, 40], // size of the icon
-                shadowSize: [41, 41], // size of the shadow
-                iconAnchor: [12, 39], // point of the icon which will correspond to marker's location
-                shadowAnchor: [13, 40],  // the same for the shadow
+                iconSize: [16, 16], // size of the icon
+                shadowSize: [0, 0], // size of the shadow
+                iconAnchor: [16, 16], // point of the icon which will correspond to marker's location
+                shadowAnchor: [0, 0],  // the same for the shadow
                 popupAnchor: [0, -30] // point from which the popup should open relative to the iconAnchor
             });
 
@@ -215,6 +229,7 @@ function(instance, properties, context) {
         }
 
     };
+
 
 
     latitudes.forEach(addEachMarker);
