@@ -63,9 +63,14 @@
         "AJw": {
             "name": "geolib",
             "url": "//dd7tel2830j4w.cloudfront.net/f1653077396175x424933691083395650/index.js"
+        },
+        "ANx": {
+            "name": "leaflet curve",
+            "url": "//meta-q.cdn.bubble.io/f1698950466726x307328905411471600/leaflet.curve.js"
         }
     },
     "dependencies": {
+        "plugin_api_version": "4",
         "use_jquery": true
     },
     "shared_keys": {

@@ -96,6 +96,23 @@
             "name": "line_join",
             "options": "miter,round,bevel",
             "rank": 10
+        },
+        "ANw": {
+            "caption": "dashArray",
+            "default_val": "2, 2",
+            "editor": "DynamicValue",
+            "name": "dashArray",
+            "optional": true,
+            "rank": 11,
+            "value": "text"
+        },
+        "AOC": {
+            "caption": "Orders count",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "orders_count",
+            "rank": 12,
+            "value": "number"
         }
     }
 }

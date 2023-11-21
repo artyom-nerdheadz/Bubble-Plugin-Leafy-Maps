@@ -11,6 +11,7 @@ function(instance, properties, context) {
     properties["fillColor"]   = properties["fillColor"]   || 'black';
     properties["fillOpacity"] = properties["fillOpacity"] || 0.5;
     properties["interactive"] = properties["interactive"] || true;
+    properties["dashArray"]   = properties["dashArray"]   || '2, 2';
     
     instance.data.style["polygon"] = properties;
     instance.data.style["circle"] = properties;
